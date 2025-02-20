@@ -1,0 +1,61 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+void gramstopounds();
+void carspeed();
+void circlearea();
+int main(){
+	int choices;
+	char again;
+	do{
+		cout << "----------------------------------------\n";
+	cout << "1. Grams to pounds conversion.\n";
+	cout << "2. Area of circle calculator.\n";
+	cout << "3. Car speed calculator.\n";
+	cout << "Enter choices(1-3): ";
+	cin >> choices;
+	cout << fixed << setprecision(2);
+	cout << "----------------------------------------\n";
+	switch(choices){
+		case 1:
+		gramstopounds();
+		break;
+		case 2:
+		circlearea();
+		break;
+		case 3:
+		carspeed();
+		break;
+		default:
+		cout << "Enter valid choice.\n";
+	}
+	cout << "Compute again? (y/n)";
+	cin >> again;
+	}while(again == 'Y' || again == 'y');
+	
+	return 0;
+}
+void gramstopounds(){
+	double grams;
+	cout << "grams to pounds conversion\n";
+	cout << "Enter grams: ";
+	cin >> grams;
+	cout << grams * 0.00220462 << " pounds\n";
+}
+void carspeed(){
+	float time, distance;
+	cout << "Car speed\n";
+	cout << "Enter time is seconds: ";
+	cin >> time;
+	cout << "Enter distance traveled in meters: ";
+	cin >> distance;
+	cout << "Car is travelling at " << distance/time << " m/s.\n";
+}
+void circlearea(){
+	float diameter;
+	cout << "Area of circle\n";
+	cout << "Enter diameter in meters: ";
+	cin >> diameter;
+	cout << "Area: " << M_PI * pow((diameter/2), 2) << " m\n";
+}
